@@ -16,12 +16,12 @@ public class RegistryConfig {
     /**
      * 注册中心类别
      */
-    private String registry = RegistryKeys.ETCD;
+    private String registry = RegistryKeys.ZOOKEEPER;
 
     /**
      * 注册中心地址
      */
-    private String address = "http://localhost:2380";
+    private String address = "127.0.0.1:2181";
 
     /**
      * 用户名

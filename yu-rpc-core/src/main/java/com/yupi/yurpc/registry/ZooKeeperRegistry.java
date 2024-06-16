@@ -107,11 +107,11 @@ public class ZooKeeperRegistry implements Registry {
 
     @Override
     public List<ServiceMetaInfo> serviceDiscovery(String serviceKey) {
-        // 优先从缓存获取服务
-        List<ServiceMetaInfo> cachedServiceMetaInfoList = registryServiceCache.readCache();
-        if (cachedServiceMetaInfoList != null) {
-            return cachedServiceMetaInfoList;
-        }
+//        // 优先从缓存获取服务
+//        List<ServiceMetaInfo> cachedServiceMetaInfoList = registryServiceCache.readCache();
+//        if (cachedServiceMetaInfoList != null) {
+//            return cachedServiceMetaInfoList;
+//        }
 
         try {
             // 查询服务信息

@@ -20,6 +20,7 @@ import com.yupi.yurpc.registry.RegistryFactory;
 import com.yupi.yurpc.serializer.Serializer;
 import com.yupi.yurpc.serializer.SerializerFactory;
 import com.yupi.yurpc.server.tcp.VertxTcpClient;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationHandler;
@@ -35,6 +36,7 @@ import java.util.Map;
  * @learn <a href="https://codefather.cn">编程宝典</a>
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
+@Slf4j
 public class ServiceProxy implements InvocationHandler {
 
     /**
@@ -64,6 +66,9 @@ public class ServiceProxy implements InvocationHandler {
         if (CollUtil.isEmpty(serviceMetaInfoList)) {
             throw new RuntimeException("暂无服务地址");
         }
+
+       log.info("serviceMetaInfoList = {}", serviceMetaInfoList);
+
 
         // 负载均衡
         LoadBalancer loadBalancer = LoadBalancerFactory.getInstance(rpcConfig.getLoadBalancer());

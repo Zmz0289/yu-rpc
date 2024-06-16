@@ -14,6 +14,11 @@ public class UserServiceImpl implements UserService {
 
     public User getUser(User user) {
         System.out.println("用户名：" + user.getName());
+
+        user.setName("dage");
+
+        System.out.println("user`s name has been changed to dage");
+
         return user;
     }
 }
